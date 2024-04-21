@@ -14,7 +14,8 @@ where m is the length of str1 and n is the length of str2.
 The bottom-up dynamic programming approach, or the Wagner-Fisher Algorithm, is indeed more efficient than the top-down approach because it avoids the overhead of recursion and utilizes a tabulation technique to build the solution iteratively. By iteratively building the solution from smaller subproblems to larger ones, the bottom-up approach ensures that each subproblem is solved exactly once, eliminate redundancy by calculating and reusing values in a tabulated manner. Additionally, the tabulation technique used in the bottom-up approach lends itself well to parallelization, making it suitable for parallel computing environments where multiple computations can be performed simultaneously. Overall, the bottom-up approach is preferred for its efficiency, especially in scenarios where performance and scalability are critical.
 So, the programs are implemented using Bottom-up approach in python `wagner_fischer.py` also implemeented in c `wagner_fischer.c` and c++ `wagner_fischer.cpp`
 
-For more details of the algorithm in top-down approach, refer my medium Blog -> [Wagner-Fischer algorithm](https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm)
+For more details of the algorithm in top-down approach, refer my medium Blog -> [Wagner-Fischer algorithm](https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm)  
+
 Check out my video on YouTube -> [Wagner-Fischer algorithm](https://youtu.be/fe-qexk0-m4)
 
 
