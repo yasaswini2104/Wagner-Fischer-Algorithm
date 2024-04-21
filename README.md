@@ -15,6 +15,7 @@ The bottom-up dynamic programming approach, or the Wagner-Fisher Algorithm, is i
 So, the programs are implemented using Bottom-up approach in python `wagner_fischer.py` also implemeented in c `wagner_fischer.c` and c++ `wagner_fischer.cpp`
 
 For more details of the algorithm in top-down approach, refer my medium Blog -> [Wagner-Fischer algorithm](https://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm)
+Check out my video on YouTube -> [Wagner-Fischer algorithm](https://youtu.be/fe-qexk0-m4)
 
 
 ## Examples
