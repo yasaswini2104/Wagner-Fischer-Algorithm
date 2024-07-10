@@ -18,6 +18,10 @@ def load_input(file_path):
     except FileNotFoundError:
         print("File not found!")
         exit(1)
+        
+# file name is found in the file path 
+# lines are read from the files
+# else returns message as file not found
 
 def wagner_fischer(str1, str2):
     
@@ -71,7 +75,7 @@ def wagner_fischer(str1, str2):
             i -= 1
             j -= 1
 
-    # Print the operations
+    # Print the operations accordingly
     print("Minimum Edit Distance:", dp[m][n])
     print("Operations:")
     for idx, operation in enumerate(reversed(operations), 1):
@@ -82,6 +86,8 @@ def wagner_fischer(str1, str2):
 # Load input from file
 str1, str2 = load_input("input.txt")
 
-# Calculate and print the minimum edit distance
+# Calculate the minimum edit distance
 min_distance = wagner_fischer(str1, str2)
+
+#print the minimum edit distance
 print(f"Minimum Edit Distance between {str1} and {str2} is: {min_distance}")
