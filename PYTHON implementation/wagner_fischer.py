@@ -49,8 +49,11 @@ def wagner_fischer(str1, str2):
     # Base cases
     for i in range(m + 1):
         dp[i][0] = i
+        # sets the value of dp[i][0] to i for all i from 0 to m
+    
     for j in range(n + 1):
         dp[0][j] = j
+        # sets the value of dp[0][j] to j for all j from 0 to n
 
     # Fill in the rest of the matrix
     for i in range(1, m + 1):
@@ -102,6 +105,7 @@ def wagner_fischer(str1, str2):
         print(f"{idx}) {operation}")
 
     return dp[m][n]
+    #return the dynamic array
 
 # Load input from file
 str1, str2 = load_input("input.txt")
