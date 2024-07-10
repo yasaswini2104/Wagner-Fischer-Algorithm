@@ -11,7 +11,6 @@ int min(int a, int b, int c)
     if (c < min_val) min_val = c;
     return min_val;
 }
-
 // Function to calculate the minimum edit distance between two strings and print the operations
 int minEditDistance(char* str1, char* str2) 
 {
@@ -82,42 +81,31 @@ int minEditDistance(char* str1, char* str2)
             j--;
         }
     }
-
-    // Print the operations
     printf("Operations:\n");
     for (int k = operationNumber - 1; k >= 0; k--) 
     {
         printf("%s\n", operations[k]);
     }
-
     // Print the minimum edit distance
     printf("Minimum Edit Distance: %d\n", dp[m][n]);
-
     return dp[m][n];
 }
 
 int main() {
     char str1[100], str2[100];
     char fileName[100];
-
     printf("Enter the file name: ");
     scanf("%s", fileName);
-
     FILE *inputFile = fopen(fileName, "r");
-
     // Check if the file is open
     if (inputFile == NULL) 
     {
         printf("Error opening file!\n");
         return 1;
     }
-
     // Read the strings from the file
     fscanf(inputFile, "%s %s", str1, str2);
-
     fclose(inputFile); // Close the input file
-
     printf("Minimum Edit Distance between %s and %s is: %d\n", str1, str2, minEditDistance(str1, str2));
-
     return 0;
 }
