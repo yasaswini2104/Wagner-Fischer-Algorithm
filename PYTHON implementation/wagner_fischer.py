@@ -1,5 +1,7 @@
+# function to load file
 def load_input(file_path):
     file_path = input("Enter the file name: ")
+    
     """
     Load input strings from a file.
 
@@ -9,6 +11,7 @@ def load_input(file_path):
     Returns:
         tuple: A tuple containing two strings loaded from the file.
     """
+    
     try:
         with open(file_path, 'r') as file:
             lines = file.readlines()
@@ -23,6 +26,8 @@ def load_input(file_path):
 # lines are read from the files
 # else returns message as file not found
 
+
+#function to compare two strings
 def wagner_fischer(str1, str2):
     
     """
@@ -59,25 +64,40 @@ def wagner_fischer(str1, str2):
 
     # Backtrack to find the operations
     i, j = m, n
+
+    # taking an empty array for inserting operations
     operations = []
+    
+
+    # iterating through while loop
     while i > 0 or j > 0:
+        
+        # checking string indices are matches
         if i > 0 and j > 0 and str1[i - 1] == str2[j - 1]:
             i -= 1
             j -= 1
+
+        # checking the positions to insert
         elif j > 0 and dp[i][j] == dp[i][j - 1] + 1:
             operations.append(f"INSERT {str2[j - 1]}")
             j -= 1
+
+        # checking the positions to delete
         elif i > 0 and dp[i][j] == dp[i - 1][j] + 1:
             operations.append(f"DELETE {str1[i - 1]}")
             i -= 1
+
+        # checking the positions to replace
         elif i > 0 and j > 0 and dp[i][j] == dp[i - 1][j - 1] + 1:
             operations.append(f"REPLACE {str1[i - 1]} with {str2[j - 1]}")
             i -= 1
             j -= 1
+        # end of while loop
 
     # Print the operations accordingly
     print("Minimum Edit Distance:", dp[m][n])
     print("Operations:")
+    # prints all the enumerated strings
     for idx, operation in enumerate(reversed(operations), 1):
         print(f"{idx}) {operation}")
 
